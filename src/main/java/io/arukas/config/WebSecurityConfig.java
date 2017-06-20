@@ -1,7 +1,6 @@
 package io.arukas.config;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -16,7 +15,17 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
-     * 设置http验证规则
+     * 配置Spring Security的Filter链
+     * @param web
+     * @throws Exception
+     */
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        super.configure(web);
+    }
+
+    /**
+     * 设置http验证规则, 如何通过拦截器保护请求
      * @param http
      * @throws Exception
      */
@@ -38,7 +47,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     /**
-     *
+     * 配置user-detail服务
      * @param auth
      * @throws Exception
      */

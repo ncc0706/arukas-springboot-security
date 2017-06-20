@@ -37,13 +37,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // 所有的 /webjars 请求都放行(静态资源)
                 .antMatchers("/webjars/**").permitAll()
 //                .antMatchers(HttpMethod.POST, "/account/login").permitAll()
+                .antMatchers("/login").permitAll()
                 .antMatchers("/account/login").permitAll()
                 // 权限检测
                 .antMatchers("/api/hello").hasAuthority("AUTH_WRITE")
                 // 角色检测
                 .antMatchers("/api/message").hasRole("ADMIN")
                 // 所有的请求需要身份认证
-                .anyRequest().authenticated();
+                .anyRequest().authenticated()
+        .and()
+//                .formLogin() // 这是默认的登录表单
+                .formLogin().loginPage("/account/login").loginProcessingUrl("/login")
+        .and()
+                .logout().logoutSuccessUrl("/login?logout");
     }
 
     /**

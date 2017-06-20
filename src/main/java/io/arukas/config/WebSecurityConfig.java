@@ -53,6 +53,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//        基于内存的用户存储、认证
         auth.inMemoryAuthentication()
                 .withUser("admin").password("admin").roles("ADMIN");
 //        super.configure(auth);

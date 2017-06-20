@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: arukas
+  thymeleaf:
+    cache: false
+
+server:
+  port: 80

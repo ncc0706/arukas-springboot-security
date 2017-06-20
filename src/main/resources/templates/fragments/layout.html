@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/css/base.css}"/>
+    <script type="text/javascript" th:src="@{/webjars/jquery/1.11.1/jquery.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.js}"></script>
+</head>
+<body>
+
+<div th:replace="/commons/header :: header"></div>
+
+<div layout:fragment="content" id="content" class="container"></div>
+
+<div th:replace="/commons/footer :: footer"></div>
+
+</body>
+</html>
+
+<!--th:include 和 th:replace区别，include只是加载，replace是替换-->
+<!--<div th:include="/commons/footer :: foot"></div>
+<div th:replace="/commons/footer :: foot"></div>-->
+<!-- 通过 id 引用 -->
+<!-- <div th:replace="~{common/footer :: #copy-section}"></div>-->

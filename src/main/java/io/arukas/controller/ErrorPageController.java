@@ -22,10 +22,6 @@ public class ErrorPageController implements ErrorController {
         return "error/400";
     }
 
-    @GetMapping(value = "/404")
-    public String errorHtml404(HttpServletRequest request, HttpServletResponse response) {
-        return "error/404";
-    }
 
     @GetMapping(value = "/401")
     public String errorHtml401(HttpServletRequest request, HttpServletResponse response) {
@@ -33,6 +29,19 @@ public class ErrorPageController implements ErrorController {
         HttpStatus httpStatus = getHttpStatus(request);
         System.out.println(httpStatus.value());
         return "error/401";
+    }
+
+    @GetMapping(value = "/403")
+    public String errorHtml403(HttpServletRequest request, HttpServletResponse response) {
+        HttpStatus httpStatus = getHttpStatus(request);
+        System.out.println(httpStatus.value());
+        return "error/403";
+    }
+
+    @GetMapping(value = "/404")
+    public String errorHtml404(HttpServletRequest request, HttpServletResponse response) {
+        System.out.println("ok..........");
+        return "error/404";
     }
 
 

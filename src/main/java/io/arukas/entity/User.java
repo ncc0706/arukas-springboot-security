@@ -1,4 +1,4 @@
-package io.arukas;
+package io.arukas.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

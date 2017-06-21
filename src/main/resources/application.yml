@@ -1,3 +1,6 @@
+server:
+  port: 80
+
 spring:
   application:
     name: arukas
@@ -12,5 +15,6 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-server:
-  port: 80
+security:
+  basic:
+    enabled: false
